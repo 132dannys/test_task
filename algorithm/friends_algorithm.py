@@ -14,10 +14,7 @@ def check_relation(arr, fname, sname):
 
     depth_first_search(fname)
     
-    if sname in set(array_of_fname_connects):
-        return True
-    else:
-        return False    
+    return True if sname in set(array_of_fname_connects) else False
 
 
 if __name__ == '__main__':
