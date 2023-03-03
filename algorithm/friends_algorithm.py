@@ -1,49 +1,23 @@
 def check_relation(arr, fname, sname):
-    first_array_of_friends = []
-    second_array_of_friends = []
+    array_of_fname_connects = list()
+    visited = set()
 
-    def find_friends(name):
-        array_of_pairs = []
-        for item in arr:
-            if name in item:
-                array_of_pairs.append(item)
+    def depth_first_search(name):
+        visited.add(name)
+        for pair in arr:
+            if name in pair:
+                for elem in pair:
+                    array_of_fname_connects.append(elem)
+        for item in array_of_fname_connects:
+            if item not in visited:
+                depth_first_search(item)
 
-        result = []
-        for elem in array_of_pairs:
-            result.extend(elem if isinstance(elem, tuple) else [elem])
-
-        for item in result:
-            if item not in first_array_of_friends:
-                first_array_of_friends.append(item)        
-
-    def find_friends2(name):
-        array_of_pairs = []
-        for item in arr:
-            if name in item:
-                array_of_pairs.append(item)
-
-        result = []
-        for elem in array_of_pairs:
-            result.extend(elem if isinstance(elem, tuple) else [elem])
-                    
-        for item in result:
-            if item not in second_array_of_friends:
-                second_array_of_friends.append(item)          
-
-    find_friends(fname)    
-    find_friends2(sname)  
-
-    for i in range(len(first_array_of_friends)):
-        find_friends(first_array_of_friends[i])
-
-    for i in range(len(second_array_of_friends)):
-        find_friends2(second_array_of_friends[i])
-
-    result = list(set(first_array_of_friends) & set(second_array_of_friends))
-    if len(result) == 0:
-        return False
+    depth_first_search(fname)
+    
+    if sname in set(array_of_fname_connects):
+        return True
     else:
-        return True    
+        return False    
 
 
 if __name__ == '__main__':
