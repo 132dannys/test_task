@@ -1,4 +1,4 @@
-## Web application, which get info about product in marketplace Wildberies by vendor code.
+## Web application, which get info about product in marketplace Wildberries by vendor code.
 
 ## Setup
 
