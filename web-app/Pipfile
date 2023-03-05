@@ -10,6 +10,11 @@ django-environ = "*"
 psycopg2-binary = "*"
 pytest-django = "*"
 pytest = "*"
+django-filter = "*"
+requests = "*"
+openpyxl = "*"
+pydantic = "*"
+aiohttp = "*"
 
 [dev-packages]
 

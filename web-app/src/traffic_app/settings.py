@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
+    'django_filters',
 
     'api',
 ]
@@ -141,3 +142,5 @@ REST_FRAMEWORK = {
         'rest_framework.renders.BrowsableAPIRenderer',
     ]
 }
+
+CELERY_BROKER_URL = 'redis://redis:6379/0'
