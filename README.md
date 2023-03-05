@@ -1,5 +1,5 @@
 # Repository for test task
 
-- Algorithm folder consisted solution for algorithm task.
+- Algorithm folder consist solution for algorithm task.
 
-- Web-app folder consisted wep application with instruction.
+- Web-app folder consist web application with instruction.
